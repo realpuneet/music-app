@@ -3,7 +3,10 @@ const mongoose = require("mongoose");
 const songSchema = new mongoose.Schema({
     title: String,
     artist: String,
-    releaseDate: Date,
+    album: String,
+    releaseYear: String,
+    audioUrl: String,
+    coverUrl: String,
 });
 
 const songModel = mongoose.model("song", songSchema);
