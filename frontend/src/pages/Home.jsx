@@ -1,9 +1,10 @@
 import React from 'react'
+import Upload from '../components/Upload'
 
 const Home = () => {
   return (
-    <div className='bg-red-500 h-screen'>
-      
+    <div className="h-screen">
+        <Upload />
     </div>
   )
 }
