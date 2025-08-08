@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import NowPlayingBar from "../components/NowPlayingBar"; // make sure path is correct
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { IoCloudUploadOutline } from "react-icons/io5";
-
 import { Link } from "react-router";
 import { CiPause1, CiPlay1 } from "react-icons/ci";
 import axios from "axios";
@@ -17,7 +16,7 @@ const AllSongs = () => {
     axios.get("http://localhost:3000/songs").then((response) => {
       setSongs(response.data.songs);
     });
-  }, []);
+  }, [songs]);
 
   const handlePlayPause = () => {
     if (!audioRef.current) return;
@@ -32,7 +31,7 @@ const AllSongs = () => {
   const currentSongData = songs.find((s) => s._id === currentSong);
 
   return (
-    <div className="p-1 bg-gray-900 h-screen text-white pb-32">
+    <div className="p-1 bg-gray-900 text-white pb-20">
       <div className="p-2 flex items-center justify-between">
         <Link to="/" className="text-2xl ">
           <IoMdArrowRoundBack />
