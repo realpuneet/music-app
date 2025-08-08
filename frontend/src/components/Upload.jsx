@@ -1,8 +1,16 @@
+import axios from "axios";
 import React from "react";
 
 const Upload = () => {
+  
+
   return (
-    <div className="h-screen bg-gray-800 flex p-3 flex-col justify-center items-center">
+    <form
+      action="/songs"
+      method="post"
+      encType="multipart/form-data"
+      className="h-screen bg-gray-800 flex p-3 flex-col justify-center items-center"
+    >
       <h1 className="text-white text-xl font-bold mb-2">Upload</h1>
       <div className="border-2 border-white text-white rounded-2xl px-5 py-13 border-dashed flex flex-col items-center justify-center">
         <h1 className="text-lg font-bold">Drag and drop to upload</h1>
@@ -22,7 +30,12 @@ const Upload = () => {
           </label>
         </div>
       </div>
-    </div>
+      <button
+      onClick={()=> uploadFile()}
+      className="px-5 py-1 bg-blue-500 m-3 text-white hover:bg-blue-700 transition-all ease-in-out hover:duration-300 rounded-lg">
+        Upload File
+      </button>
+    </form>
   );
 };
 

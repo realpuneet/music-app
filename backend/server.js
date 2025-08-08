@@ -1,7 +1,6 @@
 const app  = require("./src/app");
 const dbConnect = require("./src/config/db");
 
-
 const PORT = 3000;
 
 dbConnect()
